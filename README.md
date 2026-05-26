@@ -29,8 +29,8 @@ Users should be able to:
 
 ### 📸 Screenshot
 
-![Desktop solution](./desktop-screenshot.png)
-![Mobile solution](./mobile-screenshot.png)
+![Desktop](./desktop-screenshot.png)
+![Mobile](./mobile-screenshot.png)
 
 ### 🔗 Links
 
