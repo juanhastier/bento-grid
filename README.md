@@ -4,107 +4,131 @@ This is a solution to the [Bento grid challenge on Frontend Mentor](https://www.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Bento grid solution](#frontend-mentor---bento-grid-solution)
+  - [Table of contents](#table-of-contents)
+  - [📋 Overview](#-overview)
+    - [🎯 The challenge](#-the-challenge)
+    - [📸 Screenshot](#-screenshot)
+    - [🔗 Links](#-links)
+  - [⚙️ My process](#️-my-process)
+    - [🛠️ Built with](#️-built-with)
+    - [📚 What I learned](#-what-i-learned)
+    - [🚀 Continued development](#-continued-development)
+    - [🤖 AI Collaboration](#-ai-collaboration)
+    - [Useful resources](#useful-resources)
+  - [🙏 Acknowledgments](#-acknowledgments)
+    - [📬 Let's connect](#-lets-connect)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## 📋 Overview
 
-## Overview
-
-### The challenge
+### 🎯 The challenge
 
 Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 
-### Screenshot
+### 📸 Screenshot
 
-![](./screenshot.jpg)
+![Desktop solution](./desktop-screenshot.png)
+![Mobile solution](./mobile-screenshot.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+### 🔗 Links
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+- [Solution URL](https://github.com/juanhastier/bento-grid)
+- [Live Site URL](https://juanhastier.github.io/bento-grid)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+## ⚙️ My process
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
-
-### Built with
+### 🛠️ Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS custom properties (variables)
+- CSS Grid (grid-template-areas)
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- BEM methodology
+- Variable fonts (DM Sans)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### 📚 What I learned
 
-### What I learned
+This project was a great opportunity to practice complex CSS Grid layouts with `grid-template-areas`.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+**Layout strategy:**
+I used a mobile-first approach with a single column layout. For tablet (720px), I switched to a 2‑column grid, and for desktop (1200px), I used a 4‑column grid with custom `grid-template-areas` to match the design.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.bento-grid {
+  display: grid;
+  gap: 1.8rem;
+}
+
+@media (min-width: 1200px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "content-ia   reviews     reviews    posts"
+      "content-ia   platforms   schedule   posts"
+      "content-ia   audience    follower   follower";
+  }
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+**Overflowing images:**
+Some cards required images to overflow their containers. I used `overflow: hidden` on the card and negative margins on the image. This was simpler and more maintainable than `position: absolute`.
+
+```css
+.card--schedule {
+  overflow: hidden;
+}
+
+.card--schedule .card__image {
+  margin-bottom: -2.2rem;
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**BEM and maintainability:**
+I organized styles by modifiers (card--reviews, card--follower, etc.) and grouped common properties (gap, alignment, background) to avoid duplication. This made the CSS cleaner and easier to update.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+### 🚀 Continued development
 
-### Continued development
+I plan to keep improving my frontend skills by focusing on:
+- CSS Grid advanced patterns – mastering complex `grid-template-areas` and nested grids.
+- Performance – optimizing images and reducing CSS specificity.
+- Accessibility – testing with screen readers and improving keyboard navigation.
+- CSS variables – exploring more consistent spacing systems for larger projects.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+### 🤖 AI Collaboration
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I used DeepSeek as an AI assistant throughout this project:
+- Brainstorming solutions: Discussed different approaches for the bento grid layout and overflow behavior.
+- Debugging: Resolved issues with `grid-template-areas` and overlapping images.
+- Code review: Received feedback on CSS organization, BEM naming, and media query consistency.
+- Learning: Explored modern CSS features like variable fonts and `font-optical-sizing`.
+
+What worked well:
+The AI was helpful for clarifying layout concepts and catching structural issues early.
+
+What didn't work well:
+Some suggestions were too generic for this specific design; I had to adapt them manually.
+
+Overall:
+Using AI as a pair programming assistant accelerated my learning and helped me produce a more polished final solution.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN Web Docs](https://developer.mozilla.org/) - I really enjoyed studying on MDN, and I will continue to use it in the future.
+- [CSS Tricks: CSS Flexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This is an amazing article which helped me finally understand flexbox layout. I'd recommend it to anyone still learning this concept.
+- [CSS Tricks: CSS Grid Layout Guide](https://css-tricks.com/complete-guide-css-grid-layout/) - This is an amazing article which helped me finally understand grid layout. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+## 🙏 Acknowledgments
 
-## Author
+- Frontend Mentor – for the challenge and design assets.
+- DeepSeek (AI assistant) – for helping me brainstorm, debug, and review the code.
+- Google Fonts – for the DM Sans variable font.
+- MDN Web Docs – for documentation on CSS Grid, grid-template-areas, and variable fonts.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+### 📬 Let's connect
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@juanhastier](https://www.frontendmentor.io/profile/juanhastier)
+- LinkedIn - [Juan Hastier](https://www.linkedin.com/in/juanhastier)
+- GitHub - [juanhastier](https://github.com/juanhastier)
