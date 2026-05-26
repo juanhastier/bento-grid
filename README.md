@@ -15,7 +15,7 @@ This is a solution to the [Bento grid challenge on Frontend Mentor](https://www.
     - [📚 What I learned](#-what-i-learned)
     - [🚀 Continued development](#-continued-development)
     - [🤖 AI Collaboration](#-ai-collaboration)
-    - [Useful resources](#useful-resources)
+    - [💡 Useful resources](#-useful-resources)
   - [🙏 Acknowledgments](#-acknowledgments)
     - [📬 Let's connect](#-lets-connect)
 
@@ -114,7 +114,7 @@ Some suggestions were too generic for this specific design; I had to adapt them 
 Overall:
 Using AI as a pair programming assistant accelerated my learning and helped me produce a more polished final solution.
 
-### Useful resources
+### 💡 Useful resources
 
 - [MDN Web Docs](https://developer.mozilla.org/) - I really enjoyed studying on MDN, and I will continue to use it in the future.
 - [CSS Tricks: CSS Flexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This is an amazing article which helped me finally understand flexbox layout. I'd recommend it to anyone still learning this concept.
