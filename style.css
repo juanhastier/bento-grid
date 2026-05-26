@@ -1,0 +1,420 @@
+/* ===== FONTS ===== */
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans-italic";
+  src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+/* ===== GLOBALS ===== */
+html {
+  font-family: "DMSans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  line-height: 1;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.8rem 0.9rem;
+  background-color: #e7e7e7;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+/* ===== BENTO GRID ===== */
+.bento-grid {
+  display: grid;
+  gap: 1.8rem;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.2rem 1.8rem;
+  border-radius: 10px;
+}
+
+/* ===== ALIGNMENT MODIFIERS ===== */
+.card--schedule,
+.card--audience,
+.card--content,
+.card--ia {
+  align-items: flex-start;
+}
+
+/* ===== BACKGROUND MODIFIERS ===== */
+.card--reviews,
+.card--follower {
+  background-color: var(--purple-500);
+}
+
+.card--plataforms,
+.card--audience {
+  background-color: var(--white);
+}
+
+.card--schedule,
+.card--ia {
+  background-color: var(--yellow-500);
+}
+
+.card--posts {
+  background-color: var(--purple-100);
+}
+
+.card--content {
+  background-color: var(--yellow-100);
+  color: var(--black);
+}
+
+/* ===== GAP MODIFIERS ===== */
+.card--posts,
+.card--content {
+  gap: 1.2rem;
+}
+
+.card--follower,
+.card--audience {
+  gap: 1.8rem;
+}
+
+.card--schedule,
+.card--plataforms,
+.card--ia {
+  gap: 0.8rem;
+}
+
+/* ===== CARD IMAGES ===== */
+.card--reviews .card__image {
+  width: 190px;
+  margin-bottom: 0.4rem;
+}
+
+.card--plataforms .card__image {
+  border-radius: 30px;
+  box-shadow: -10px 10px 10px rgb(250, 250, 250);
+}
+
+.card--schedule .card__image,
+.card--ia .card__image {
+  width: 220px;
+}
+
+.card--follower .card__image {
+  width: 230px;
+}
+
+.card--audience .card__image {
+  width: 180px;
+}
+
+.card--content .card__image {
+  width: 190px;
+}
+
+/* ===== CARD TITLES ===== */
+.card--follower .card__title {
+  width: 230px;
+  font-size: 1.8rem;
+}
+
+.card--audience .card__title {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.card--content .card__title,
+.card--ia .card__title {
+  font-size: 1.8rem;
+}
+
+/* ===== SPECIFIC STYLES ===== */
+.card--reviews {
+  text-align: center;
+  color: var(--white);
+}
+
+.card--plataforms {
+  padding: 0.8rem 0.9rem;
+}
+
+.card--schedule {
+  padding: 0.9rem;
+  overflow: hidden;
+}
+
+.card--posts {
+  padding: 1.6rem 0.9rem 1.8rem;
+  text-align: center;
+}
+
+.card--posts .card__description {
+  padding: 0 8px;
+}
+
+.card--follower,
+.card--audience {
+  padding: 1.2rem;
+}
+
+.card--content {
+  padding: 1.6rem;
+  text-align: left;
+}
+
+.card--ia {
+  padding: 1.2rem;
+  text-align: left;
+  color: var(--black);
+}
+
+/* ===== OVERFLOWING IMAGE ===== */
+.card--schedule .card__image {
+  margin-bottom: -2.2rem;
+}
+
+/* ===== UTILITIES ===== */
+.highlight {
+  color: var(--yellow-500);
+}
+
+.italic {
+  font-family: "DMSans-italic", sans-serif;
+  font-weight: 500;
+}
+
+.highlight-italic {
+  color: var(--purple-500);
+  font-family: "DMSans-italic", sans-serif;
+}
+
+.stat {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+/* ===== GRID COLUMN ===== */
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* ===== TABLET ===== */
+@media screen and (min-width: 720px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "reviews     reviews"
+      "platforms  schedule"
+      "posts       posts"
+      "follower    follower"
+      "audience    audience"
+      "content-ia  content-ia";
+  }
+
+  .grid-column {
+    grid-area: content-ia;
+    flex-direction: row;
+  }
+
+  .card--reviews {
+    grid-area: reviews;
+  }
+
+  .card--posts {
+    grid-area: posts;
+  }
+
+  .card--plataforms {
+    grid-area: platforms;
+  }
+
+  .card--schedule {
+    grid-area: schedule;
+  }
+
+  .card--audience {
+    grid-area: audience;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .card--follower {
+    grid-area: follower;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .card--content,
+  .card--ia {
+    flex: 1;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media screen and (min-width: 1200px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "content-ia   reviews     reviews    posts"
+      "content-ia   platforms   schedule   posts"
+      "content-ia   audience    follower   follower";
+    max-width: 1120px;
+  }
+
+  .grid-column {
+    flex-direction: column;
+  }
+
+  .card--reviews {
+    padding: 3.4rem 1.8rem;
+  }
+
+  .card--reviews .card__title {
+    font-size: 3.5rem;
+  }
+
+  .card--posts {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.6rem;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .card--posts .card__image {
+    width: 360px;
+    max-width: 360px;
+  }
+
+  .card--posts .card__description {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .card--plataforms {
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 1.4rem 1.4rem 1.2rem;
+    overflow: hidden;
+  }
+
+  .card--plataforms .card__image {
+    max-width: 312px;
+    width: 312px;
+    margin-bottom: 0.6rem;
+  }
+
+  .card--schedule {
+    padding: 1.4rem;
+  }
+
+  .card--posts .card__title,
+  .card--plataforms .card__title,
+  .card--schedule .card__title {
+    font-size: 1.8rem;
+    line-height: 0.9;
+  }
+
+  .card--schedule .card__image {
+    width: 100%;
+    margin-bottom: -4.8rem;
+  }
+
+  .card--follower {
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem;
+    text-align: left;
+  }
+
+  .card--follower .card__title {
+    flex: 1;
+    font-size: 2.2rem;
+    letter-spacing: 0;
+  }
+
+  .card--follower .card__image {
+    width: 220px;
+  }
+
+  .card--audience {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.4rem;
+  }
+
+  .stat {
+    font-size: 3.5rem;
+  }
+
+  .card--content {
+    justify-content: center;
+  }
+
+  .card--ia {
+    justify-content: space-between;
+    padding: 1.4rem;
+    overflow: hidden;
+  }
+
+  .card--content .card__title,
+  .card--ia .card__title {
+    font-size: 2.2rem;
+    line-height: 0.9;
+  }
+}
